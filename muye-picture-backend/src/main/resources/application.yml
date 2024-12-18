@@ -1,0 +1,35 @@
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/muye-usercenter
+    username: root
+    password: Lxc592122.
+  application:
+    name: muye-picture-backend
+
+knife4j:
+  enable: true
+  openapi:
+    title: 牧野图库接口文档
+    version: v1.0
+    group:
+      test1:
+        group-name: 默认分组
+        api-rule: package
+        api-rule-resources:
+          - com.muye.muyepicturebackend.controller
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
